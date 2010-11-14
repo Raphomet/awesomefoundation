@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem "will_paginate", :version => "2.3.12"
   config.gem "spreadsheet", :version => "0.6.4.1"
   config.gem "fastercsv", :version => "1.5.3"
+  config.gem "rack-rewrite"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
