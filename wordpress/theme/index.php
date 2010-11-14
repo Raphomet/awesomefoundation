@@ -1,48 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
-<head profile="http://gmpg.org/xfn/11">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title><?php if ( is_home() ) : echo "Blog - "; else : wp_title(" - ", true, "right"); endif; ?>The Awesome Foundation</title>
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="The Awesome Foundation Feed" href="/blog/feed/" /> 
-</head>
-<body>
-
-<div id="navbar">
-  <div class="wrapper">
-    <ul id="nav">
-      <li><a href="/" title="Home">Home</a></li>
-      <li><a href="/apply/" title="Apply">Apply</a></li>
-      <li><a href="/about/" title="About">About</a></li>
-      <li><a href="/faq/" title="FAQ">FAQ</a></li>
-      <li><a href="/contact/" title="Contact">Contact</a></li>
-      <li><a href="/chapters/" title="Chapters">Chapters</a></li>
-      <!-- <li><a href="/grants/" title="Grants">Grants</a></li> -->
-      <li><a href="/calendar/" title="Calendar">Calendar</a></li>
-      <li><a href="/blog/" title="Blog">Blog</a></li>
-    </ul>
-    <ul id="follow">
-      <li><a href="http://twitter.com/awesomefound"><img src="/images/icons/twitter.png" title="Twitter" /></a></li>
-      <li><a href="http://www.facebook.com/awesomefoundation"><img src="/images/icons/facebook.png" title="Facebook" /></a></li>
-      <li><a href="/blog/feed/"><img src="/images/icons/feed.png" title="Feed" /></a></li>
-      <li><a href="mailto:contact@awesomefoundation.org"><img src="/images/icons/email.png" /></a></li>
-    </ul>
-  </div>
-</div>
-
-<div id="header">
-  <div class="wrapper">
-    <h1><a href="/" title="Home"><img src="/images/logo.png" alt="The Awesome Foundation" /></a></h1>
-  </div>
-</div>
-
-<div id="content">
-  <div class="wrapper">
+<?php get_header() ?>
 
     <div id="main">
 
-    <?php if ( is_home() || is_single() ) : ?>
+    <?php if ( is_home() || is_single() || is_page() ) : ?>
+
 
       <?php include( TEMPLATEPATH . '/entries.php' ); ?>
       <?php include( TEMPLATEPATH . '/entries-navigation.php' ); ?>
@@ -97,42 +58,4 @@
     </ul>
     </div>
 
-  </div>
-</div>
-
-<div style="clear: both"></div>
-
-<div id="footer">
-  <div class="wrapper">
-    <div>Designed and developed by <a href="http://blog.jonpierce.com">@jonpierce</a>, Boston trustee</div>
-  </div>
-</div>
-
-<script type="text/javascript">
-//<![CDATA[
-var disqus_developer = 0;
-(function() {
-	var links = document.getElementsByTagName('a');
-	var query = '?';
-	for(var i = 0; i < links.length; i++) {
-	if(links[i].href.indexOf('#disqus_thread') >= 0) {
-		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-	}
-	}
-	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/awesomefoundationblog/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
-</script>
-<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-9594800-1");
-pageTracker._trackPageview();
-} catch(err) {}
-</script>
-</body>
-</html>
+<?php get_footer() ?>
