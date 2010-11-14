@@ -1,7 +1,12 @@
 <% content_for :title, h(@chapter.name) %>
 
 <div id="main">
-  
+  <% unless @chapter.body.blank? %>
+    <h1><%= @chapter.name %> Chapter</h1>
+
+    <%= @chapter.body %>  
+  <% end %>
+
   <h2><%=h @chapter.name %> Trustees</h2>
   <ul id="trustees">
   <% @trustees.each do |trustee| %>

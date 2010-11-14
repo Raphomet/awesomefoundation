@@ -11,6 +11,11 @@
 <%= f.text_field :slug %>
 </li>
 
+<li class="input">
+<%= f.label :body, "Page Body" %>
+<%= f.text_area :body, :class => "pagebody" %>
+</li>
+
 <li class="button">
 <%= f.submit "Save" %>
 </li>

@@ -202,6 +202,10 @@ form ul li.button {
   margin-top: 20px;
 }
 
+form textarea.pagebody {
+  width: 100%;
+}
+
 #submission_use {
   height: 150px;
 }
@@ -246,6 +250,11 @@ form ul li.button {
 }
 #trustees li .links {
   display: none;
+}
+
+.column { 
+  float: right;
+  width: 250px;
 }
 
 /** BLOG **/
