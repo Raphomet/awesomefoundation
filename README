@@ -12,9 +12,7 @@ Prerequisites:
 Do:
 choose a location and download the source
  $ git clone https://github.com/awesomefoundation/awesomefoundation.git
-it'll make a dir called 'awesomefoundation'. cd into that and do:
- $ touch config/secrets.yml
-(as yet, not sure why this is needed, if it should contain anything, or why it isn't in the repo)
+it'll make a dir called 'awesomefoundation'. cd into it
 Now set up mysql.  create the awesomefound user and grant it access to the dbs that don't exist yet
  $ mysql -u root
  mysql> grant all on awesomefound.* to awesomefound@'%';
