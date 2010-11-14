@@ -8,7 +8,7 @@ set :deploy_to, "/opt/apps/#{application}"
 set :deploy_via, :remote_cache
 set :copy_exclude, [".gitignore", ".gitkeep", ".git/*"]
 set :scm, :git
-set :repository, "git@github.com:jonpierce/awesomefoundation.git"
+set :repository, "git@github.com:awesomefoundation/awesomefoundation.git"
 set :branch, "master"
 
 set :server_name, "69.164.211.197"
