@@ -6,6 +6,7 @@
 <link rel="shortcut icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="The Awesome Foundation Feed" href="/blog/feed/" /> 
+<meta property="og:image" content="http://www.awesomefoundation.org/images/awesomefoundation_400x320.png" /> 
 </head>
 <body>
 
