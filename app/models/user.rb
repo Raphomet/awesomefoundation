@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   
   attr_protected :admin
+
+  named_scope :orphaned, :conditions => "#{table_name}.chapter_id IS NULL"
   
   belongs_to :chapter
 

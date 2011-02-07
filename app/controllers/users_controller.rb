@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   before_filter :load_chapters, :only => [:new, :create, :edit, :update]
   
   def index
-    @users = User.all
+    @chapters = Chapter.find(:all, :include => [:trustees])
+    @orphans  = User.orphaned
   end
   
   def new
