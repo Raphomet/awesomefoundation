@@ -5,6 +5,9 @@ class Submission < ActiveRecord::Base
   [:name, :email, :title, :description, :use].each do |field|
     validates_presence_of field, :message => "^#{field.to_s.humanize} is required"
   end
+
+  before_validation :cleanup_newlines
+
   validates_length_of :name, :maximum => 75, :message => "^Name must be {{count}} characters or fewer"
   validates_length_of :email, :maximum => 100, :message => "^Email must be {{count}} characters or fewer"
   validates_length_of :url, :maximum => 250, :message => "^URL must be {{count}} characters or fewer", :allow_blank => true
@@ -19,6 +22,16 @@ class Submission < ActiveRecord::Base
   def title
     the_title = read_attribute(:title)
     the_title ||= name
+  end
+
+  protected
+
+  # When submissions come in from the web, often newlines are \r\n
+  # which messes up our maximum length. This should clean that up.
+  def cleanup_newlines
+    [:description, :use].each do |field|
+      self[field].gsub!(/\r\n/, "\n") if self[field]
+    end
   end
   
 end
