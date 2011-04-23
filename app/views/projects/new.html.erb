@@ -21,7 +21,7 @@
   </p>
   <p>
     <%= f.label :chapter_id %><br />
-    <%= f.text_field :chapter_id %>
+    <%= f.select :chapter_id, options_for_select( Chapter.find(:all).map { |chapter| [chapter.name, chapter.id] } ) %>
   </p>
   <p>
     <%= f.label :description %><br />
