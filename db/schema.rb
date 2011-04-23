@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20101114013221) do
 
   create_table "wp_comments", :primary_key => "comment_ID", :force => true do |t|
     t.integer  "comment_post_ID",      :limit => 8,   :default => 0,   :null => false
-    t.text     "comment_author",       :limit => 255,                  :null => false
+    t.text     "comment_author",                                       :null => false
     t.string   "comment_author_email", :limit => 100, :default => "",  :null => false
     t.string   "comment_author_url",   :limit => 200, :default => "",  :null => false
     t.string   "comment_author_IP",    :limit => 100, :default => "",  :null => false
@@ -98,18 +98,18 @@ ActiveRecord::Schema.define(:version => 20101114013221) do
   add_index "wp_comments", ["comment_post_ID"], :name => "comment_post_ID"
 
   create_table "wp_links", :primary_key => "link_id", :force => true do |t|
-    t.string   "link_url",                             :default => "",  :null => false
-    t.string   "link_name",                            :default => "",  :null => false
-    t.string   "link_image",                           :default => "",  :null => false
-    t.string   "link_target",      :limit => 25,       :default => "",  :null => false
-    t.string   "link_description",                     :default => "",  :null => false
-    t.string   "link_visible",     :limit => 20,       :default => "Y", :null => false
-    t.integer  "link_owner",       :limit => 8,        :default => 1,   :null => false
-    t.integer  "link_rating",                          :default => 0,   :null => false
-    t.datetime "link_updated",                                          :null => false
-    t.string   "link_rel",                             :default => "",  :null => false
-    t.text     "link_notes",       :limit => 16777215,                  :null => false
-    t.string   "link_rss",                             :default => "",  :null => false
+    t.string   "link_url",                               :default => "",  :null => false
+    t.string   "link_name",                              :default => "",  :null => false
+    t.string   "link_image",                             :default => "",  :null => false
+    t.string   "link_target",      :limit => 25,         :default => "",  :null => false
+    t.string   "link_description",                       :default => "",  :null => false
+    t.string   "link_visible",     :limit => 20,         :default => "Y", :null => false
+    t.integer  "link_owner",       :limit => 8,          :default => 1,   :null => false
+    t.integer  "link_rating",                            :default => 0,   :null => false
+    t.datetime "link_updated",                                            :null => false
+    t.string   "link_rel",                               :default => "",  :null => false
+    t.text     "link_notes",       :limit => 2147483647,                  :null => false
+    t.string   "link_rss",                               :default => "",  :null => false
   end
 
   add_index "wp_links", ["link_visible"], :name => "link_visible"
