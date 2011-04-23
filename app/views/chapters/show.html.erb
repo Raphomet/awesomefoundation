@@ -33,7 +33,10 @@
     <ul id="projects">
     <% @projects.each do |project| %>
       <li class="projects">
-        <%= link_to project.title, project_path(project) %>
+        <%= link_to project.title, project %>
+        <% if current_user && current_user.admin? %>
+          <%= link_to 'Edit', edit_project_path(project) %>
+        <% end %>
       </li>
     <% end %>
     </ul>  
@@ -45,7 +48,8 @@
     <ul id="projects">
     <% @unannounced_projects.each do |project| %>
       <li class="projects">
-        <%= link_to project.title, project_path(project) %> (Unannounced)
+        <%= link_to project.title, project %> (Unannounced)
+        <%= link_to 'Edit', edit_project_path(project) %>
       </li>
     <% end %>
     </ul>  
